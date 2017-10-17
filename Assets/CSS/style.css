@@ -1,0 +1,29 @@
+html{
+	background-image: url(../Images/halloween-orange-moon-cemetry.png);
+	background-size: 100%;
+	height: 100%;
+	background-position: center;
+}
+#container{
+	margin: 0 auto;
+	max-width: 600px;
+	text-align: center;
+}
+#header h1{
+	text-transform: uppercase;
+	font-family: 'Amatic SC', cursive;
+	font-size: 100px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+}
+#header button{
+	border: none;
+	background-color: black;
+	color: white;
+	font-size: 30px;
+	padding: 10px 20px 10px 20px;
+	text-transform: uppercase;
+	font-family: 'Amatic SC', cursive;
+	letter-spacing: 1px;
+	font-weight: bold;
+	box-shadow: 1px 0px 20px 10px rgba(255,255,255,0.5);
+}
