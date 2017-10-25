@@ -1,6 +1,7 @@
 //function that hides the start button and show questions
 $(document).ready(function(){
 	
+	$("#counter").hide();
 	
 	var panel = $("#questions-container");
 	var countStartNumber = 30;
@@ -55,7 +56,7 @@ $(document).ready(function(){
 		countdown: function(){
 			
 			game.counter--;
-			$("counter-number").text(game.counter);
+			$("#counter").text(game.counter);
 			if (game.counter === 0){
 				$("#questions-container").html("<h3>Time Up</h3>");
 				game.timeUp();
@@ -63,29 +64,31 @@ $(document).ready(function(){
 		},
 		
 		loadQuestion: function(){
-			timer = setInterval(game.countdown, 3000);
+			timer = setInterval(game.countdown, 1000);
 			
 			$("#questions-container").html("<h2>" + questions[this.currentQuestion].question + "</h2>");
 			for ( var i = 0; i < questions[this.currentQuestion].choices.length; i++){
 				$("#questions-container").append("<button class='answer-button' id='button' data-name='" + questions[this.currentQuestion].choices[i] + "'>" + questions[this.currentQuestion].choices[i] + "</button>");
 			}
 			
-			
+			$("#counter").show();
 			
 		},
 		
 		nextQuestion: function(){
 			game.counter = countStartNumber;
-			$("#counter-number").text(game.counter);
+			$("#counter").text(game.counter);
 			game.currentQuestion++;
 			game.loadQuestion();
+			$("#counter").show();
+			
 		},
 		
 		timeUp: function(){
 			
 			clearInterval(timer);
 			
-			$("#counter-number").html(game.counter);
+			$("#counter").html(game.counter);
 			panel.html("<h2>Out of Time!</h2>");
 			panel.append("<h3> The corret answer was: " + questions[this.currentQuestion].correctAnswer);
 			panel.append("<img src='" + questions[this.currentQuestion].image + "'/>");
@@ -98,12 +101,12 @@ $(document).ready(function(){
 			
 			panel.html("<h2>Let's check your results</h2>");
 			
-			$("#counter-number").text(game.counter);
+			$("#counter").text(game.counter);
 			
-			panel.append("<h3>Correct Answers: " + game.correct + "</h3>");
-			panel.append("<h3>Incorrect Answers: " + game.incorrect + "</h3");
-			panel.append("<h3>Unanswered: " + (questions.length - (game.incorrect + game.correct)) + "</h3>");
-			panel.append("<button id='start-over-button'> Start Over</button>");
+			panel.append("<h3 class='results'>Correct Answers: " + game.correct + "</h3>");
+			panel.append("<h3 class='results'>Incorrect Answers: " + game.incorrect + "</h3");
+			panel.append("<h3 class='results'>Unanswered: " + (questions.length - (game.incorrect + game.correct)) + "</h3>");
+			panel.append("<button id='start-over-button'> Start Over</button>");``
 		},
 		
 		clicked: function(event){
@@ -130,6 +133,8 @@ $(document).ready(function(){
 			} else {
 				setTimeout(game.nextQuestion, 3000);
 			}
+			
+			$("#counter").hide();
 		},
 		
 		answeredCorrectly: function(){
@@ -145,6 +150,7 @@ $(document).ready(function(){
 			  setTimeout(game.nextQuestion, 3000);
 			}
 			
+			$("#counter").hide();
 		},
 		
 		reset: function(){
@@ -153,6 +159,7 @@ $(document).ready(function(){
 			this.correct = 0;
 			this.incorrect = 0;
 			this.loadQuestion();
+			$("#counter").show();
 			
 		}
 		
@@ -166,7 +173,7 @@ $(document).ready(function(){
 	});
 	
 	$(document).on("click", "#start-button", function(){
-		$("#counter-number").append(countStartNumber);
+		$("#counter").append(countStartNumber);
 		$("#header").hide();
 		$("#questions-container").css("display", "block");
 		game.loadQuestion();
@@ -181,7 +188,6 @@ $(document).ready(function(){
 	});	
 	
 	$(document).on("click", "#start", function() {
-  $("#counter").prepend("<h2>Time Remaining: <span id='counter-number'>30</span> Seconds</h2>");
-  game.loadQuestion();
-});
+  		game.loadQuestion();
+	});
 });
