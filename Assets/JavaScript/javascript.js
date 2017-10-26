@@ -7,39 +7,39 @@ $(document).ready(function(){
 	var countStartNumber = 30;
 	
 	
-	
+	 
 	//questions and answers
 	
 	var questions = [{
 		question: "Which of these movies was not directed by Alfred Hitchcock?",
 		choices: ["North By Northwest", "The Shining","Psycho", "The Birds"],
 		correctAnswer: "The Shining",
-		image: "assets/images/the-shinning.gif"
+		image: "/assets/images/the-shinning.gif"
 	},{
 		question: "Who directed the infamous film, Pan's Labyrinth?",
 		choices: ["Guillermo Del Toro", "Wes Craven", "Dario Argento", "John Carpenter"],
 		correctAnswer: "Guillermo Del Toro",
-		image: "assets/images/pans-labyrinth.gif"
+		image: "/assets/images/pans-labyrinth.gif"
 	},{
 		question: "What year did the exorcist come out?",
 		choices: ["1976", "1973", "1974", "1975"],
 		correctAnswer: "1973",
-		image: "assets/images/the-exorcist.gif"
+		image: "/assets/images/the-exorcist.gif"
 	},{
 		question: "Which horror movie featured a satanic cult trying to give birth to the anti-christ?",
 		choices: ["The Hills Have Eyes", "The Texas Chainsaw Massacre", "The Last House On The Left", "Rosemary's Baby"],
 		correctAnswer: "Rosemary's Baby",
-		image: "assets/images/rosemarys-baby.gif"
+		image: "/assets/images/rosemarys-baby.gif"
 	},{
 		question: "Which of these killers appeared in the movie Psycho?",
 		choices: ["The Zodiac Killer", "Ghostface", "Norman Bates", "Candyman"],
 		correctAnswer: "Norman Bates",
-		image: "assets/images/norman-bates.gif"
+		image: "/assets/images/norman-bates.gif"
 	},{
 		question: "What was Freddy Krueger convicted of before he was murdered?",
 		choices: ["Grand Theft Auto","Child Homicide", "Burglary", "Attempted Homicide"],
 		correctAnswer: "Child Homicide",
-		image: "assets/images/freddy-krueger.gif"
+		image: "/assets/images/freddy-krueger.gif"
 	}];
 	
 	
