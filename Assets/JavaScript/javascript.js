@@ -93,6 +93,7 @@ $(document).ready(function(){
 			panel.append("<h3> The corret answer was: " + questions[this.currentQuestion].correctAnswer);
 			panel.append("<img src='" + questions[this.currentQuestion].image + "'/>");
 			game.results();
+			
 		},
 		
 		results: function(){
@@ -169,7 +170,6 @@ $(document).ready(function(){
 	$("#next-question").on("click", function(){
 		game.nextQuestion();
 		console.log(game.nextQuestion());
-		
 	});
 	
 	$(document).on("click", "#start-button", function(){
